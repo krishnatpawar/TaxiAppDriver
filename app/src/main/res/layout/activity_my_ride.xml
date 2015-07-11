@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:padding="5dp"
+    tools:context="com.taxi.driver.taxiappdriver.activity.MyRideActivity">
+
+    <Button
+        android:id="@+id/my_ride_start_stop_btn"
+        android:layout_width="125dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn_bg"
+        android:text="START / STOP" />
+
+    <Space
+        android:id="@+id/my_ride_space"
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <LinearLayout
+        android:id="@+id/my_ride_distance_travelled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/my_ride_space"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distance Travelled: "
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="10Km "
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/my_ride_start_stop_btn"
+        android:layout_below="@id/my_ride_distance_travelled"></com.google.android.gms.maps.MapView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/my_ride_space"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/my_ride_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/my_ride_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ride Date"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/time_price_bg" />
+    </LinearLayout>
+
+</RelativeLayout>
