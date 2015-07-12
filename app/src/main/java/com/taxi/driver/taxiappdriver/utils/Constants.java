@@ -14,4 +14,26 @@ public class Constants {
      * tags used for capturing image from camera & gallery
      */
     public static final String PROFILEIMAGEPATH = "/taxi/profile_images";
+
+
+    public static String BASE_URL = "http://fancynews.in/taxidriver/";
+
+
+    //signin
+    public static String sign_in = "http://fancynews.in/taxidriver/mobiledriverlogincheck.php?" +
+            "driveremail=madirisalmanaashish@gmail.com&driverpassword=12345";
+
+    public static String registration = "http://fancynews.in/taxidriver/mobiledriverregistration.php?" +
+            "driverfullname=aashish&driverpassword=12345&drivercarnumber=1233838" +
+            "&drivercartype=benzene&devicetoken=sdasd&devicetype=android" +
+            "&driveremail=madirisalmanaashish@gmail.com&file=profilepic.jpg";
+
+    public static String update = "http://fancynews.in/taxidriver/updatedriverdetails.php?" +
+            "driverid=25&driverfullname=aashish&driverpassword=12345" +
+            "&drivercarnumber=1233838&drivercartype=benzene" +
+            "&devicetoken=sdasd&devicetype=android" +
+            "&driveremail=madirisalmanaashish@gmail.com&file=profilepic.jpg";
+
+    public static String forgot_pwd = "http://fancynews.in/taxidriver/driverforgotpasword.php?email=madirisalmanaashish@gmail.com";
+
 }
