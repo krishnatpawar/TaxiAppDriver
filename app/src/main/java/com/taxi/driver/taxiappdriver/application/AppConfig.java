@@ -1,6 +1,7 @@
 package com.taxi.driver.taxiappdriver.application;
 
 import android.app.Application;
+import android.content.Context;
 import android.text.TextUtils;
 
 import com.android.volley.Request;
@@ -13,8 +14,9 @@ import com.android.volley.toolbox.Volley;
 public class AppConfig extends Application {
 
     private static AppConfig mInstance;
-    private String TAG = "taxi_app";
+    private String TAG = "driver_app";
     private RequestQueue requestQueue;
+    private static Context mContext;
 
     public static AppConfig getInstance() {
         return mInstance;
@@ -54,4 +56,10 @@ public class AppConfig extends Application {
         getRequestque().add(tag);
     }
 
+    public static Context getCurrentContext() {
+        return mContext;
+    }
+    public static void setCurentContext(Context mContext) {
+        AppConfig.mContext = mContext;
+    }
 }

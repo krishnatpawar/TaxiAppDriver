@@ -16,7 +16,18 @@
             android:name=".activity.MyRideActivity"
             android:label="@string/title_activity_my_ride"></activity>
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.StartActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_main"></activity>
+
+        <activity
+            android:name=".activity.AbstractTaxiDriverActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_main"></activity>
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_myrides">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
