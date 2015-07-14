@@ -256,7 +256,7 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
                 return;
             }
             if (responseInfo.equalsIgnoreCase("success")) {
-                startScreen(MyRideActivity.class);
+                startScreen(MainActivity.class);
                 Preferences.setUserId(getApplicationContext(), userId);
                 finish();
             }else if(responseInfo.equalsIgnoreCase("Incorrect email or password please try again")){
@@ -373,7 +373,7 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
                 return;
             }
             if (responseInfo.equalsIgnoreCase("Success")) {
-                startScreen(MyRideActivity.class);
+                startScreen(MainActivity.class);
                 Preferences.setUserId(getApplicationContext(), userId);
                 finish();
             }else  if (responseInfo.equalsIgnoreCase("Email Exists")) {

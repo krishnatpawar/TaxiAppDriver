@@ -18,6 +18,7 @@ import com.taxi.driver.taxiappdriver.fragment.MyRidesFragment;
 import com.taxi.driver.taxiappdriver.fragment.NavigationDrawerFragment;
 import com.taxi.driver.taxiappdriver.fragment.NewRidesFragment;
 import com.taxi.driver.taxiappdriver.fragment.ProfileFragment;
+import com.taxi.driver.taxiappdriver.fragment.TransactionsFragment;
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.FragmentDrawerListener {
@@ -95,7 +96,11 @@ public class MainActivity extends ActionBarActivity
                 title = getString(R.string.title_profile);
                 break;
             case 3:
-                Toast.makeText(this, "logout", Toast.LENGTH_SHORT).show();
+                fragment = new TransactionsFragment();
+                title = getString(R.string.title_transactions);
+                break;
+            case 4:
+                finish();
             default:
                 break;
         }

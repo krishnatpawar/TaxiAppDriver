@@ -29,7 +29,7 @@ public class SplashActivity extends AbstractTaxiDriverActivity {
                 try {
                     Thread.sleep(2000);
                     if(!Preferences.getUserId(SplashActivity.this).isEmpty()){
-                        startScreen(MyRideActivity.class);
+                        startScreen(MainActivity.class);
                         finish();
                     }else{
                         startScreen(StartActivity.class);

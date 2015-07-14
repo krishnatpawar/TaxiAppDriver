@@ -47,4 +47,8 @@ public class NewRidesAdapter extends BaseAdapter {
         }
         return convertView;
     }
+
+    private class NewRidesHolder {
+
+    }
 }

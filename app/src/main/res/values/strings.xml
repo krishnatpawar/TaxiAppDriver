@@ -8,7 +8,7 @@
     <string name="title_activity_myrides">SplashActivity</string>
     <string name="title_activity_main">LoginActivity</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_abstract_taxi">AbstractTaxiActivity</string>
     <string name="title_activity_registration">RegistrationActivity</string>
@@ -33,7 +33,7 @@
     <string name="nav_item_newrides">New Rides</string>
     <string name="nav_item_myrides">MyRides</string>
     <string name="nav_item_profile">Profile</string>
-
+    <string name="nav_item_transactions">Transactions</string>
     <string name="nav_item_logout">Logout </string>
 
     <!-- navigation drawer item labels  -->
@@ -41,6 +41,7 @@
         <item>@string/nav_item_myrides</item>
         <item>@string/nav_item_newrides</item>
         <item>@string/nav_item_profile</item>
+        <item>@string/nav_item_transactions</item>
         <item>@string/nav_item_logout</item>
     </string-array>
 
@@ -48,7 +49,7 @@
     <string name="title_myrides">MyRides</string>
     <string name="title_profile">Profile</string>
     <string name="title_logout">Logout</string>
-
+    <string name="title_transactions">Transactions</string>
     <string name="common_url">http://wowads.asia/taxidriver/</string>
     <string name="register_service">register.php</string>
 

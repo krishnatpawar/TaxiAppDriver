@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.taxi.driver.taxiappdriver.R;
 
@@ -41,9 +43,26 @@ public class MyRidesAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
+        MyRidesHolder holder;
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.list_item_my_rides, parent, false);
+            holder = new MyRidesHolder();
+            holder.layout = (RelativeLayout) convertView.findViewById(R.id.list_item_my_rides_layout);
+            convertView.setTag(holder);
+        } else {
+            holder = (MyRidesHolder) convertView.getTag();
         }
+
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Yet to implement", Toast.LENGTH_SHORT).show();
+            }
+        });
         return convertView;
+    }
+
+    private class MyRidesHolder {
+        RelativeLayout layout;
     }
 }
