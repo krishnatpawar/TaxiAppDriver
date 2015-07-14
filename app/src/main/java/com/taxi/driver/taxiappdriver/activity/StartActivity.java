@@ -256,7 +256,7 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
                 return;
             }
             if (responseInfo.equalsIgnoreCase("success")) {
-                startScreen(MyRideActivity.class);
+                startScreen(MainActivity.class);
                 String userId = jsonObject.getString(TAG_USERID);
                 Preferences.setUserId(getApplicationContext(), userId);
                 finish();
@@ -374,7 +374,7 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
                 return;
             }
             if (responseInfo.equalsIgnoreCase("Success")) {
-                startScreen(MyRideActivity.class);
+                startScreen(MainActivity.class);
                 String userId = jsonObject.getString("id");
                 Preferences.setUserId(getApplicationContext(), userId);
                 finish();
