@@ -251,12 +251,13 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
         CustomLog.v("TAXI_LOGIN", "login: " + jsonObject);
         try {
             String responseInfo = jsonObject.getString(TAG_RESPONSEINFO);
-            String userId = jsonObject.getString(TAG_USERID);
+
             if (responseInfo.isEmpty()) {
                 return;
             }
             if (responseInfo.equalsIgnoreCase("success")) {
-                startScreen(MainActivity.class);
+                startScreen(MyRideActivity.class);
+                String userId = jsonObject.getString(TAG_USERID);
                 Preferences.setUserId(getApplicationContext(), userId);
                 finish();
             }else if(responseInfo.equalsIgnoreCase("Incorrect email or password please try again")){
@@ -368,16 +369,17 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
         CustomLog.v("TAXI_REGISTER", "register: " + jsonObject);
         try {
             String responseInfo = jsonObject.getString(TAG_RESPONSEINFO);
-            String userId = jsonObject.getString("id");
+
             if (responseInfo.isEmpty()) {
                 return;
             }
             if (responseInfo.equalsIgnoreCase("Success")) {
-                startScreen(MainActivity.class);
+                startScreen(MyRideActivity.class);
+                String userId = jsonObject.getString("id");
                 Preferences.setUserId(getApplicationContext(), userId);
                 finish();
             }else  if (responseInfo.equalsIgnoreCase("Email Exists")) {
-               showMessage("Driver Email already existe");
+               showMessage("Driver Email already existed");
             }
         } catch (JSONException e) {
             e.printStackTrace();

@@ -3,18 +3,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/splash_screen_inner">
 
-
-    <ImageView
-        android:id="@+id/app_logo_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/logo_main" />
-
     <LinearLayout
         android:id="@+id/login_llyt"
         android:layout_width="match_parent"
@@ -50,10 +38,22 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:padding="20dp"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/app_logo_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/logo_main" />
 
             <RelativeLayout
                 android:id="@+id/app_login_layout"
+                android:layout_below="@id/app_logo_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -118,6 +118,7 @@
                 android:id="@+id/app_register_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/app_logo_image"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:background="#33FFFFFF"
