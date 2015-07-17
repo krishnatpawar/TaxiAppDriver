@@ -9,7 +9,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:gravity="center"
-
         android:orientation="horizontal">
 
         <Button
@@ -33,7 +32,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/login_llyt">
+        android:layout_alignParentTop="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -44,12 +43,10 @@
                 android:id="@+id/app_logo_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:src="@drawable/logo_main"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/logo_main" />
+                android:layout_alignRight="@+id/app_login_layout"
+                android:layout_alignEnd="@+id/app_login_layout" />
 
             <RelativeLayout
                 android:id="@+id/app_login_layout"
@@ -101,7 +98,6 @@
                     android:layout_below="@id/login_pwd"
                     android:layout_margin="5dp"
                     android:background="@drawable/ask_btn_selector"
-                    android:padding="10dp"
                     android:text="Login" />
 
                 <TextView

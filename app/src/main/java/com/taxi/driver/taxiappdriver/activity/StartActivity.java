@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -138,7 +139,7 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
 
         String url = Webservices.BASE_URL + Webservices.FORGET_URL
                 + "email=" + loginEmailStr;
-
+        Log.v("FORGET_WS", "URL: " + url);
         final ProgressDialog pd = new ProgressDialog(StartActivity.this);
         pd.setTitle("Requesting...");
         pd.setMessage("Forget to InstantTaxi..Wait");
@@ -213,10 +214,10 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
 
     //login
     private void serviceToLoginDriver(String loginEmailStr,String loginpwStrin){
-
-        /*http://wowads.asia/taxidriver/login.php?email=ashishssss@dkslakds.com&password=sdhjlashdh*/
+       // "http://fancynews.in/taxidriver/mobiledriverlogincheck.php?" +
+       //         "driveremail=madirisalmanaashish@gmail.com&driverpassword=12345";
         String url = Webservices.BASE_URL + Webservices.LOGIN_URL
-                + "?email=" + loginEmailStr + "&password=" + loginpwStrin;
+                + "driveremail=" + loginEmailStr + "&driverpassword=" + loginpwStrin;
 
         final ProgressDialog pd = new ProgressDialog(StartActivity.this);
         pd.setTitle("Requesting...");
@@ -251,7 +252,7 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
         CustomLog.v("TAXI_LOGIN", "login: " + jsonObject);
         try {
             String responseInfo = jsonObject.getString(TAG_RESPONSEINFO);
-
+            CustomLog.d("", "responseInfo: " + responseInfo);
             if (responseInfo.isEmpty()) {
                 return;
             }
@@ -328,7 +329,9 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
 
     }
 
-    private void serviceToRegisterUser(String registPwdStr, String registFullNameStr, String registPhoneStr, String registcarNoStr,String registMobileStr,String registCartypeStr,String registEmailStr) {
+    private void serviceToRegisterUser(String registPwdStr, String registFullNameStr, String registPhoneStr,
+                                       String registcarNoStr,String registMobileStr,String registCartypeStr,
+                                       String registEmailStr) {
 
         /*http://wowads.asia/taxidriver/register.php?newemail=ashishs@dkslakds.com
         &newfullname=dsfsdsaf&newpassword=sdhjlashdh&newphonenumber=324234324*/

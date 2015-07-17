@@ -5,6 +5,10 @@
     android:gravity="center_vertical"
     android:orientation="horizontal">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
     <ImageView
         android:id="@+id/new_rides_image"
         android:layout_width="60dp"
@@ -17,8 +21,8 @@
 
     <Button
         android:id="@+id/new_rides_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_gravity="center_vertical|right"
@@ -41,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
-            android:text="DriverName"
+            android:text="Ride one"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -50,9 +54,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Driver Location"
+            android:text="Ride Location"
             android:textColor="@android:color/background_dark"
             android:textSize="16sp" />
     </LinearLayout>
-
+    </RelativeLayout>
 </RelativeLayout>
