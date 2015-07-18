@@ -32,7 +32,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true">
+        android:layout_above="@id/login_llyt">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -121,13 +121,13 @@
                 android:padding="5dp"
                 android:visibility="gone">
 
-                <!-- <ImageView
+                <ImageView
                      android:id="@+id/register_profile_pic"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:layout_centerHorizontal="true"
                      android:padding="10dp"
-                     android:src="@drawable/registration_thumb" />-->
+                     android:src="@drawable/registration_thumb" />
 
                 <EditText
                     android:id="@+id/register_pwd"
@@ -135,6 +135,7 @@
                     android:layout_height="45dp"
                     android:layout_margin="5dp"
                     android:background="#ffffff"
+                    android:layout_below="@id/register_profile_pic"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:padding="10dp"

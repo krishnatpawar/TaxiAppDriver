@@ -17,7 +17,7 @@ public class Webservices {
 
     public static String LOGIN_URL = "mobiledriverlogincheck.php?";
 
-    public static String REGISTER_URL = "mobiledriverregistration.php?";
+    public static String REGISTER_URL = "mobiledriverregistration.php";
 
     public static String UPDATE_URL = "updatedriverdetails.php?";
 
