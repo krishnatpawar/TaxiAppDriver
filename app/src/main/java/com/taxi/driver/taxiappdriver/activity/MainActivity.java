@@ -19,8 +19,9 @@ import com.taxi.driver.taxiappdriver.fragment.NavigationDrawerFragment;
 import com.taxi.driver.taxiappdriver.fragment.NewRidesFragment;
 import com.taxi.driver.taxiappdriver.fragment.ProfileFragment;
 import com.taxi.driver.taxiappdriver.fragment.TransactionsFragment;
+import com.taxi.driver.taxiappdriver.utils.Preferences;
 
-public class MainActivity extends ActionBarActivity
+public class MainActivity extends AbstractTaxiDriverActivity
         implements NavigationDrawerFragment.FragmentDrawerListener {
 
     private static String TAG = MainActivity.class.getSimpleName();
@@ -100,6 +101,7 @@ public class MainActivity extends ActionBarActivity
                 title = getString(R.string.title_transactions);
                 break;
             case 4:
+                Preferences.setUserId(getApplicationContext(), "");
                 finish();
             default:
                 break;

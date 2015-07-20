@@ -17,6 +17,10 @@ public class SplashActivity extends AbstractTaxiDriverActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getIntent().getBooleanExtra("LOGOUT", false))
+        {
+            finish();
+        }
         setContentView(R.layout.activity_splash);
         AppConfig.setCurentContext(this);
         loginIntoApp(MainActivity.class);

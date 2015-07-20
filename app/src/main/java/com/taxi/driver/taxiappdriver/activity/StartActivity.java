@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -61,9 +62,8 @@ import java.util.Map;
  */
 public class StartActivity extends AbstractTaxiDriverActivity implements View.OnClickListener {
 
-
-
-    public final String TAG_RESPONSEINFO="responseinfo";
+    public final String TAG_RESPONSEINFO ="responseinfo";
+    public final String TAG_RESPONSE ="response";
 
     public final String TAG_USERID="userid";
 
@@ -385,10 +385,10 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
             Log.v("", "Responce onPostExecute: " + result);
             if (dialog != null && dialog.isShowing()) {
                 dialog.dismiss();
-                if (result != null && !result.equalsIgnoreCase("")) {
+                if (TextUtils.isEmpty(result)) {
                     ResponceAfterUpdateUser(result);
                 } else {
-                    showMessage("Something went wrong at server side..!");
+                    showMessage("Something went wrong, Try again with valid credentails");
                 }
             }
         }
@@ -612,22 +612,24 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
             jsonObject = new JSONObject(jsonResponse);
             try {
                 String responseInfo = jsonObject.getString(TAG_RESPONSEINFO);
-                String response = jsonObject.getString("response");
+                String response = jsonObject.getString(TAG_RESPONSE);
+                Log.v(TAG_RESPONSE, "TAG: " + response);
                 if (responseInfo.isEmpty()) {
                     return;
                 }
 
                 if(response.equalsIgnoreCase("success")){
-
                     if (responseInfo.equalsIgnoreCase("Email Exists")) {
                         showMessage("Driver Email already existed");
+                        return;
                     }else if(responseInfo.equalsIgnoreCase("Verification Link sent to registered Email")){
                         showMessage("Verification Link sent to registered Email");
+                        return;
                     }
-                       /* startScreen(MainActivity.class);
+                        startScreen(MainActivity.class);
                         String userId = jsonObject.getString("id");
                         Preferences.setUserId(getApplicationContext(), userId);
-                        finish();*/
+                        finish();
                 }else{
                     showMessage("Something went wrong please try again");
                 }
@@ -785,11 +787,11 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
         CustomLog.v("TAXI_LOGIN", "login: " + jsonObject);
         try {
             String responseInfo = jsonObject.getString(TAG_RESPONSEINFO);
-            CustomLog.d("", "responseInfo: " + responseInfo);
+            String response = jsonObject.getString(TAG_RESPONSE);
             if (responseInfo.isEmpty()) {
                 return;
             }
-            if (responseInfo.equalsIgnoreCase("success")) {
+            if (response.equalsIgnoreCase("success")) {
                 startScreen(MainActivity.class);
                 String userId = jsonObject.getString(TAG_USERID);
                 Preferences.setUserId(getApplicationContext(), userId);
