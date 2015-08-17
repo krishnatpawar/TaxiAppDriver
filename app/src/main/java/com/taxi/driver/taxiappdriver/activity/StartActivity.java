@@ -385,7 +385,7 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
             Log.v("", "Responce onPostExecute: " + result);
             if (dialog != null && dialog.isShowing()) {
                 dialog.dismiss();
-                if (TextUtils.isEmpty(result)) {
+                if (!TextUtils.isEmpty(result)) {
                     ResponceAfterUpdateUser(result);
                 } else {
                     showMessage("Something went wrong, Try again with valid credentails");
@@ -631,7 +631,7 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
                         Preferences.setUserId(getApplicationContext(), userId);
                         finish();
                 }else{
-                    showMessage("Something went wrong please try again");
+                    showMessage(responseInfo);
                 }
 
 
@@ -677,7 +677,7 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
         Log.v("FORGET_WS", "URL: " + url);
         final ProgressDialog pd = new ProgressDialog(StartActivity.this);
         pd.setTitle("Requesting...");
-        pd.setMessage("Forget to InstantTaxi..Wait");
+        pd.setMessage("Please..Wait");
         pd.setCancelable(false);
         pd.show();
 
@@ -712,13 +712,7 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
             if (responseInfo.isEmpty()) {
                 return;
             }
-            if (responseInfo.equalsIgnoreCase("success")) {
-                showMessage("Password sent your mail, please check");
-            }else if(responseInfo.equalsIgnoreCase("failure")){
-                showMessage("Incorrect email please try again");
-            }else{
-                showMessage("Something went wrong please try again");
-            }
+            showMessage(responseInfo);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -796,10 +790,8 @@ public class StartActivity extends AbstractTaxiDriverActivity implements View.On
                 String userId = jsonObject.getString(TAG_USERID);
                 Preferences.setUserId(getApplicationContext(), userId);
                 finish();
-            }else if(responseInfo.equalsIgnoreCase("Incorrect email or password please try again")){
-               showMessage("Incorrect email or password please try again");
-            }else{
-                showMessage("Something went wrong please try again");
+            }else {
+                showMessage(responseInfo);
             }
         } catch (JSONException e) {
             e.printStackTrace();

@@ -29,28 +29,26 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/app_logo_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logo_main" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/login_llyt">
+        android:layout_above="@id/login_llyt"
+        android:layout_below="@id/app_logo_image">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:padding="20dp"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/app_logo_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/logo_main"
-                android:layout_alignParentTop="true"
-                android:layout_alignRight="@+id/app_login_layout"
-                android:layout_alignEnd="@+id/app_login_layout" />
+            android:layout_height="match_parent"
+            android:padding="20dp">
 
             <RelativeLayout
                 android:id="@+id/app_login_layout"
-                android:layout_below="@id/app_logo_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -84,10 +82,10 @@
                     android:background="#ffffff"
                     android:drawableLeft="@drawable/login_password"
                     android:drawablePadding="5dp"
-                    android:singleLine="true"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:padding="10dp"
+                    android:singleLine="true"
                     android:textColor="@color/color_black"
                     android:textColorHint="@color/color_grey" />
 
@@ -114,7 +112,6 @@
                 android:id="@+id/app_register_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/app_logo_image"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:background="#33FFFFFF"
@@ -122,20 +119,20 @@
                 android:visibility="gone">
 
                 <ImageView
-                     android:id="@+id/register_profile_pic"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_centerHorizontal="true"
-                     android:padding="10dp"
-                     android:src="@drawable/registration_thumb" />
+                    android:id="@+id/register_profile_pic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:padding="10dp"
+                    android:src="@drawable/registration_thumb" />
 
                 <EditText
                     android:id="@+id/register_pwd"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
+                    android:layout_below="@id/register_profile_pic"
                     android:layout_margin="5dp"
                     android:background="#ffffff"
-                    android:layout_below="@id/register_profile_pic"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:padding="10dp"
@@ -151,8 +148,8 @@
                     android:layout_margin="5dp"
                     android:background="#ffffff"
                     android:hint="Full Name"
-                    android:singleLine="true"
                     android:padding="10dp"
+                    android:singleLine="true"
                     android:textColor="@color/color_black"
                     android:textColorHint="@color/color_grey" />
 
@@ -178,8 +175,8 @@
                     android:layout_margin="5dp"
                     android:background="#ffffff"
                     android:hint="Car Number"
-                    android:singleLine="true"
                     android:padding="10dp"
+                    android:singleLine="true"
                     android:textColor="@color/color_black"
                     android:textColorHint="@color/color_grey" />
 
@@ -192,8 +189,8 @@
                     android:background="#ffffff"
                     android:hint="Mobile Number"
                     android:inputType="phone"
-                    android:singleLine="true"
                     android:padding="10dp"
+                    android:singleLine="true"
                     android:textColor="@color/color_black"
                     android:textColorHint="@color/color_grey" />
 
@@ -218,10 +215,10 @@
                     android:layout_margin="5dp"
                     android:background="#ffffff"
                     android:drawablePadding="5dp"
-                    android:singleLine="true"
                     android:hint="Email Id"
                     android:inputType="textEmailAddress"
                     android:padding="10dp"
+                    android:singleLine="true"
                     android:textColor="@color/color_black"
                     android:textColorHint="@color/color_grey" />
 

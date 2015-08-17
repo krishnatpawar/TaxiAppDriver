@@ -26,5 +26,4 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:21.0.+'
     compile files('libs/volley.jar')
     compile 'com.google.android.gms:play-services:+'
-    compile 'com.android.support:recyclerview-v7:21.0.+'
 }
